@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Email test</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="../resources/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/static/css/style.css">
+    <link rel="stylesheet" href="../resources/static/css/table.css">
+</head>
+<body>
+<table >
+    <tr>
+        <th><a href="/products">Product list</a>
+        </th>
+        <th><a href="/admin">Admin menu</a>
+        </th>
+        <th><a href="/startpage">Start Page</a>
+        </th>
+    </tr>
+</table>
+<p th:text="${product_exist}"></p>
+<form action="/product" method="post" enctype="multipart/form-data">
+    <div>
+        <input id="name" name="name" placeholder="Name" type="text">
+        <input id="quantity" name="quantity" placeholder="Quantity" type="text">
+        <input id="description" name="description" placeholder="Description" type="text">
+        <select name="type">
+            <option value="roses">roses</option>
+            <option value="tulips">tulips</option>
+            <option value="peony">peony</option>
+            <option value="bouquet">bouquet</option>
+            <option value="another">another</option>
+        </select>
+        <input id="price" name="price" placeholder="Price" type="text">
+        <input id="file" name="file" placeholder="Photo" type="file" >
+        <button class="btn btn-info" type="submit">Add product</button>
+    </div>
+</form>
+</body>
+<script src="../resources/static/js/jquery.min.js"></script>
+<script src="../resources/static/js/bootstrap.min.js"></script>
+</html>

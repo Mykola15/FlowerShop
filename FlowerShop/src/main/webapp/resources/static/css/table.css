@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid grey;
+}
+td, tr, th{
+    text-align: center;
+    border: 1px solid grey;
+}
+.description{
+    width: 20%;
+}
+.photo{
+    width: 20%;
+}

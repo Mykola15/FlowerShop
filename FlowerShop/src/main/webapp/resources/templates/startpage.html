@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../resources/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/static/css/style.css">
+    <link rel="stylesheet" href="../resources/static/css/startpage.css">
+    <link rel="stylesheet" href="../resources/static/css/fonts.css">
+    <title>Start2</title>
+</head>
+
+<body>
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-light " id="header_nav">
+        <a class="navbar-brand" href="/startpage">
+            <img src="../resources/static/img/logo.png" alt="">
+            <span> Flower Shop</span>
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/like_list" id="like_list">
+                        <img src="../resources/static/img/like-list.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item dropdown account-menu-item">
+                    <a class="nav-link" href="#" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" id="acc">
+                        <img src="../resources/static/img/acc_logo.png" alt="">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="user">
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <a class="dropdown-item" href="/registration">Registration</a>
+                        <a class="dropdown-item">
+                            <form action="/logout" method="post">
+                                 <input type="submit" value="Sign Out"/>
+                            </form>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart" id="cart">
+                        <img src="../resources/static/img/cart.png" alt="">
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<div class="container-fluid main-content">
+    <div class="row">
+        <div class="col-lg-2" style="position:relative;">
+            <aside>
+                <ul class="aside_ul">
+                    <li class="aside_item"><a href="/startpage">All</a></li>
+                    <li class="aside_item"><a href="/startpage/roses">Roses</a></li>
+                    <li class="aside_item"><a href="/startpage/tulips">Tulips</a></li>
+                    <li class="aside_item"><a href="/startpage/peony">Peony</a></li>
+                    <li class="aside_item"><a href="/startpage/bouquet">Bouquet</a></li>
+                    <li class="aside_item"><a href="/startpage/another">Another</a></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="col-lg-10">
+            <div class="row" id="item_row">
+                <div class="col-md-3 col-sm-6" th:each="product : ${products}">
+                    <div class="good-item" th:data-id= "${product.id}">
+                        <div class="good-item-img-block">
+                            <img th:src="@{'../resources/static/img/items/'+ ${product.photo}}" alt="flower">
+                            <div class="good-item-img-hover">
+                                <img th:src="@{'../resources/static/img/items/'+ ${product.photo}}" alt="flower">
+                                <div class="good-item-description" th:text="${product.description}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="good-item-options">
+                            <div class="text-center">
+                                <div class="good-item-header">
+                                    <h3 th:text="${product.name}"></h3>
+                                </div>
+                                <div class="good-item-price">
+                                    <span th:text="${product.price}"></span>$
+                                </div>
+                            </div>
+                            <form method="post" action="/to_cart">
+                                <div class="text-center">
+                                    <div class="quantity">
+                                        <button class="minus-btn" type="button" name="button">
+                                            <img src="../resources/static/img/minus.svg" alt="">
+                                        </button>
+                                        <input type="text" name="quantity" th:value="1">
+                                        <button class="plus-btn" type="button" name="button">
+                                        <img src="../resources/static/img/plus.svg" alt="">
+                                    </button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 text-center ">
+                                    <div class="good-items-btns">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="hidden" th:value="${product.id}" name="productId">
+                                                <button class="btn btn-success" type="submit">Buy</button>
+                                            </div>
+                                            <div class="col-6 text-right">
+                                                <span class="like-btn float-right" ></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../resources/static/js/jquery.min.js"></script>
+<script src="../resources/static/js/bootstrap.min.js"></script>
+<script src="../resources/static/js/startpage.js"></script>
+</body>
+
+</html>

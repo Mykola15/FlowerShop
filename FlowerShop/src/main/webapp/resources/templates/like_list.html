@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../resources/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/static/css/like_list.css">
+    <link rel="stylesheet" href="../resources/static/css/style.css">
+    <title>Like list</title>
+</head>
+<body>
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-light " id="header_nav">
+        <a class="navbar-brand" href="/startpage">
+            <img src="../resources/static/img/logo.png" alt="">
+            <span> Flower Shop</span>
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/like_list" id="like_list">
+                        <img src="../resources/static/img/like-list.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item dropdown account-menu-item">
+                    <a class="nav-link" href="#" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" id="acc">
+                        <img src="../resources/static/img/acc_logo.png" alt="">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="user">
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <a class="dropdown-item" href="/registration">Registration</a>
+                        <a class="dropdown-item">
+                            <form action="/logout" method="post">
+                                <input type="submit" value="Sign Out"/>
+                            </form>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart" id="cart">
+                        <img src="../resources/static/img/cart.png" alt="">
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<aside>
+    <ul class="aside_ul">
+        <li class="aside_item"><a href="/startpage">All</a></li>
+        <li class="aside_item"><a href="/startpage/roses">Roses</a></li>
+        <li class="aside_item"><a href="/startpage/tulips">Tulips</a></li>
+        <li class="aside_item"><a href="/startpage/peony">Peony</a></li>
+        <li class="aside_item"><a href="/startpage/bouquet">Bouquet</a></li>
+        <li class="aside_item"><a href="/startpage/another">Another</a></li>
+    </ul>
+</aside>
+<main>
+    <div class="container">
+        <div class="like-list">
+            <div class="title">
+                Like List
+            </div>
+            <div class="item" th:each="product : ${products}" th:data-id="${product.id}">
+                <div class="row align-items-center">
+                    <div class="col-md-1 text-md-center">
+                        <div class="buttons">
+                            <span class="delete-btn"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="img">
+                            <img th:src="@{'../resources/static/img/items/'+ ${product.product.photo}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="description">
+                            <h3 th:text="${product.product.name}"></h3>
+                            <div th:text="${product.product.description}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="total-price" th:text=|$${product.product.price}|></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script src="../resources/static/js/jquery.min.js"></script>
+<script src="../resources/static/js/bootstrap.min.js"></script>
+<script src="../resources/static/js/like_list.js"></script>
+</html>

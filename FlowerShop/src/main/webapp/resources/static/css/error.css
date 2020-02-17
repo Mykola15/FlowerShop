@@ -1,0 +1,27 @@
+.main {
+    color: #2F3034;
+    font-family: LeituraDisplay, serif;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+.link {
+    color: #2F3034;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.link a{
+    background-color: transparent;
+    font-size: inherit;
+    color:rgb(133, 62, 123);
+    text-decoration: none;
+}
+.link:hover a{
+    color: #5E6977;
+    border-bottom: 2px solid #5E6977;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="../resources/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/static/css/style.css">
+    <link rel="stylesheet" href="../resources/static/css/table.css">
+    <title>Title</title>
+
+</head>
+<body>
+<table >
+    <tr>
+        <th><a href="/products">Product list</a>
+        </th>
+        <th><a href="/admin">Admin menu</a>
+        </th>
+        <th><a href="/startpage">Start Page</a>
+        </th>
+    </tr>
+</table>
+<form action="/products" method="post">
+    Name<input type="text" name="name" th:value="${product.name}">
+    Price<input type="text" name="price" th:value="${product.price}">
+    Description<input type="text" name="description" th:value="${product.description}">
+    Type<select name="type" th:value="${product.type}">
+    <option value="roses">roses</option>
+    <option value="tulips">tulips</option>
+    <option value="peony">peony</option>
+    <option value="bouquet">bouquet</option>
+    <option value="another">another</option>
+</select>
+    Quantity<input type="text" name="quantity" th:value="${product.quantity}">
+    <input type="hidden" th:value="${product.id}" name="productId">
+    <button type="submit">Save</button>
+</form>
+<button class="delete-btn" type="button" th:data-id="${product.id}">Delete</button>
+<script src="../resources/static/js/jquery.min.js"></script>
+<script src="../resources/static/js/bootstrap.min.js"></script>
+<script src="../resources/static/js/productEdit.js"></script>
+</body>
+</html>

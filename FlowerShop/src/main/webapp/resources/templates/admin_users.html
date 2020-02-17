@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>Email test</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="../resources/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/static/css/style.css">
+    <link rel="stylesheet" href="../resources/static/css/table.css">
+</head>
+<body>
+<table>
+    <tr>
+        <th><a href="/admin">Admin menu</a>
+        </th>
+        <th><a href="/startpage">Start Page</a>
+        </th>
+    </tr>
+</table>
+<form>
+    <div>
+        <table id="table_users">
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+            <tr th:each="user : ${users}">
+
+                <td th:text="${user.username}"></td>
+                <td><p th:each="role : ${user.roles}"th:text="${role}"></p></td>
+                <td><a th:href="@{'/user/' + ${user.id}}">edit</a></td>
+            </tr>
+
+        </table>
+    </div>
+</form>
+</body>
+<script src="../resources/static/js/jquery.min.js"></script>
+<script src="../resources/static/js/bootstrap.min.js"></script>
+<script src="../resources/static/js/userEdit.js"></script>
+</html>

@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(227, 171, 223, 0.2);
+    font-family: 'Roboto', sans-serif;
+}
+
+.like-list {
+    margin: 80px 0;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 6px;
+}
+
+.title {
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.item {
+    padding: 15px;
+}
+
+.item .img>img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+    margin:auto;
+    border-radius: 6px;
+
+}
+
+.delete-btn {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url("../img/delete-icn.svg") no-repeat center;
+}
+
+.description{
+    padding:5px;
+    color: #43484D;
+    font-weight: 400;
+    font-size: 16px;
+    text-align:justify;
+}
+
+.total-price {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    position: relative;
+    color: rgb(133, 62, 123);
+}
+.total-price:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left:0;
+    background: linear-gradient(to right, rgb(133, 62, 123),rgb(227, 171, 223),rgb(133, 62, 123));
+}
+

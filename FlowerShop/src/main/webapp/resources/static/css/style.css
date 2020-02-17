@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    background-color: rgba(227, 171, 223, 0.2);
+    font-family: 'Roboto', serif;
+}
+
+/* Main */
+.main-content{
+    padding-left:0;
+    position:relative;
+    margin-top:100px;
+}
+@media (max-width:992px){
+    .main-content{
+        padding-left:15px;
+    }
+}
+
+/* Header */
+#header_nav {
+    background: rgba(133, 62, 123, 0.7);
+    width: 100%;
+}
+
+.navbar-toggler, .navbar-toggler:focus {
+    outline: none;
+    border: none;
+}
+
+#header_nav .nav-link {
+    font-family: 'Roboto', serif ;
+
+}
+
+.navbar-brand span{
+    color:white;
+    font-size:24px;
+}
+
+.navbar-brand img {
+    width: 70px;
+    height: 70px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav{
+    display: flex;
+    align-items: center;
+
+}
+
+@media (min-width:992px){
+    #navbarNavDropdown{
+        display:flex;
+        justify-content: flex-end;
+
+    }
+}
+
+
+#cart img {
+
+    margin: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#acc img {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#like_list img {
+
+    margin: 0;
+    width: 35px;
+    height: 35px;
+}
+
+#menu a {
+    font-family: Roboto, sans-serif;
+}
+
+#menu a:hover,
+#menu a:focus {
+    background: #853e7b;
+    color: white;
+    padding-left: 15px;
+}
+.account-menu-item .dropdown-menu{
+    left: auto;
+    right: 0;
+}
+
+/* Aside */
+
+aside {
+    background: rgba(133, 62, 123, 0.7);
+    font-size: 16px;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 0 6px 6px 0;
+    font-family: Roboto, serif;
+    padding-left:0;
+    position:fixed;
+    top:20vh;
+}
+.aside_ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+.aside_item{
+    margin: 10px 10px 10px 20px;
+    cursor:pointer;
+}
+.aside_item a{
+    color: white;
+    text-decoration: none;
+}
+.aside_item a:hover{
+    color: black;
+}
+@media (max-width:992px){
+    aside{
+        position: relative;
+        top:0;
+        width: 100%;
+        padding-left:15px;
+        border-radius:0;
+    }
+}
+
+
+
+
+
+
