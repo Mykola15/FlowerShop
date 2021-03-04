@@ -1,13 +1,14 @@
-lab2
-Інтернет магазин квітів
+Online Flower Shop
 
-Бекенд-Java(Spring MVC) 
-Frontend-JS(jQuery,ajax),thymeleaf, html, css
+Stack:
+Back-end -- Java(Spring MVC) 
+Front-end -- JS(jQuery,ajax),thymeleaf, html, css
 
-Реалізовані функції:
 
-1)Реєстрація, логінація
-2)Додавання квітів в лайк-лист та корзину
-3)Динамічне видалення з лайк_листу та корзини
-4)Сортування за видом квітів
-5)Обрахунок вартості квітів в корзині
+Released features:
+
+1)Authentification of user
+2)Adding flowers to like-list and cart
+3)Dynamic deletion of flowers 
+4)Sorting flowers by type
+5)Counting price of order
